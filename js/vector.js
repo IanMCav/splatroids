@@ -17,24 +17,49 @@ function Vector(x, y) {
         return Math.atan((this.x / this.y));
     };
     
-    //Add two vectors
-    this.addVec = function(otherVec) {
-        return new Vector(this.x + otherVec.x, this.y + otherVec.y);
+    //Add a vector to this one
+    this.add = function(otherVec) {
+        this.x += otherVec.x;
+        this.y += otherVec.y;
     };
     
-    //Subtract two vectors
-    this.subVec = function(otherVec) {
-        return new Vector(this.x - otherVec.x, this.y + otherVec.y);
+    //Subtract a vector from this one
+    this.subtract = function(otherVec) {
+        this.x -= otherVec.x;
+        this.y -= otherVec.y;
     };
     
-    //Multiply vector and scalar
-    this.multScalar = function(multInt) {
-        return new Vector(this.x * multInt, this.y * multInt);
+    //Multiply this vector by a scalar
+    this.multiply = function(multInt) {
+        this.x *= multInt;
+        this.y *= multInt;
+    };
+    
+    //Divide this vector by a scalar
+    this.divide = function(divInt) {
+        this.x /= divInt;
+        this.y /= divInt;
+        console.log(this.x + " " + this.y);
     };
     
     //dot product
     this.dot = function(dotVec) {
         return ((this.x * dotVec.x) + (this.y * dotVec.y));
     };
+    
+    //turn this vector into a unit vector
+    this.normalize = function() {
+        this.divScalar(this.magnitude());
+    };
+    
+    //copy this vector
+    this.clone = function() {
+        return new Vector(this.x, this.y);
+    };
+    
+    //return a unit vector with the same direction as this vector
+    this.normal = function() {
+        return this.clone.normalize();
+    };
 
-};
+}

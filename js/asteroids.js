@@ -1,4 +1,4 @@
-function Asteroid(newX, newY) {
+function Asteroid(newX, newY, isOriginal) {
     "use strict";
     this.position = new Vector(newX, newY);
     this.velocity = new Vector(0, 0);
