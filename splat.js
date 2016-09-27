@@ -1,0 +1,1 @@
+//The splats, drawn after an asteroid is destroyed.
