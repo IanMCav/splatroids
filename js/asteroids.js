@@ -1,16 +1,13 @@
-function asteroid(newX, newY) {
+function Asteroid(newX, newY) {
     "use strict";
     this.position = new Vector(newX, newY);
     this.velocity = new Vector(0, 0);
     this.direction = new Vector(0, 0);
     
-    this.circRad = 20;
+    this.circRad = 30;
     
     this.numTris = (Math.random() * 16) + 40
-    
-    var canvas = document.querySelector('#can');
-    var ctx = canvas.getContext("2d");
-    
+        
     this.draw = function() {
         ctx.fillStyle = "black";
         
@@ -34,4 +31,4 @@ function asteroid(newX, newY) {
         
         
     }
-}
+};

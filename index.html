@@ -3,21 +3,40 @@
 <head>
 	<meta charset="utf-8" />
     <title>TestRoids</title>
-    
-    <script src="vector.js"></script>
-    <script src="asteroids.js"></script>
-    <script src="ship.js"></script>
+
 </head>
+    <script src="js/vector.js"></script>
+    <script src="js/splat.js"></script>
+    <script src="js/asteroids.js"></script>
+    <script src="js/bullet.js"></script>
+    <script src="js/ship.js"></script>
+    <script src="js/game.js"></script>
+
+    <script>
+
+        var canvas;
+        var ctx;
+
+        function init() {
+            canvas = document.getElementById("myCan");
+            ctx = canvas.getContext("2d");
+            
+            var testRoid = new Asteroid(50, 50);
+            testRoid.draw();
+
+        };
+
+        window.onload= init;
+
+    </script>
+
     
     <body>
-        <script src="js/vector.js"></script>
-        <script src="js/splat.js"></script>
-        <script src="js/asteroids.js"></script>
-        <script src="js/bullet.js"></script>
-        <script src="js/ship.js"></script>
-        <script src="js/game.js"></script>
         
-        <canvas width = "200" height = "200" border = '2px solid black' id = 'can'></canvas>
+        <canvas width = "400" height = "400" style= "border: 2px solid black;" id = 'myCan'></canvas>
+        
+    
+
         
     </body>
     

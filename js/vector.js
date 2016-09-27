@@ -37,4 +37,4 @@ function Vector(x, y) {
         return ((this.x * dotVec.x) + (this.y * dotVec.y));
     };
 
-}
+};
