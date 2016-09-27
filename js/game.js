@@ -1,3 +1,4 @@
+'use strict';
 /*collision detection:
 
 get the image data for where the item is going to be, with offset being the number of pixels it'll move and snapWidth and snapHeight being the dimensions of the item.
@@ -13,3 +14,22 @@ a color you want, do a thing!
 
 
 */
+
+function detectCollisions(detThing, offset, snapWidth, snapHeight, snap) {
+    for(var i = 0; i < snapWidth * snapHeight * 4; i += 4) {
+            
+        if(snap[i] == '0' && snap[i+1] == '0' && snap[i+2] == '0') {
+            //dostuff if colliding with black!
+        }
+        
+        /*else
+        if(othercolors)
+        {
+        
+        }
+        
+        etc.
+        */
+            
+    }
+}
