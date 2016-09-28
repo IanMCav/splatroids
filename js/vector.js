@@ -39,7 +39,6 @@ function Vector(x, y) {
     this.divide = function(divInt) {
         this.x /= divInt;
         this.y /= divInt;
-        console.log(this.x + " " + this.y);
     };
     
     //dot product

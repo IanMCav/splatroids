@@ -1,35 +1,67 @@
-'use strict';
-/*collision detection:
+function Game() {
+    'use strict';
+    
+    this.player = new Ship(300, 300);
+        
+    this.takeInput = function(e) {
+        var code = e.keyCode;
+        
+        console.log('in');
+        
+        switch(code) {
+        case 32:
+            //do spacebar things here!
+            break;
 
-get the image data for where the item is going to be, with offset being the number of pixels it'll move and snapWidth and snapHeight being the dimensions of the item.
+        case 37:
+            game.player.angle -= 0.02 * Math.PI;
+                if(game.player.angle <= 0) {
+                game.player.direction = new Vector((game.player.circRad * Math.cos(game.player.angle)),
+                                                   (game.player.circRad * Math.sin(game.player.angle))).multiply(-1);
+                }
+                
+                else 
+                if(game.player.angle > 0) {
+                    game.player.direction = new Vector(game.player.circRad * Math.cos(game.player.angle),
+                                                       game.player.circRad * Math.sin(game.player.angle));
+                }
+                
+            break;
 
+        case 38:
+            //do up arrow things here!
+            break;
 
-ctx.getImageData(thingX + offset, thingY + offset, snapWidth, snapHeight);
-
-Length of the clip is snapWidth * snapHeight, because the above will create an array of color elements,
-storing the rgba values for each pixel
-
-You can then loop through the array in increments of 4 to check color values, and if something corresponds to 
-a color you want, do a thing!
-
-
-*/
-
-function detectCollisions(detThing, offset, snapWidth, snapHeight, snap) {
-    for(var i = 0; i < snapWidth * snapHeight * 4; i += 4) {
+        case 39:
+            game.player.angle += 0.02 * Math.PI;
             
-        if(snap[i] == '0' && snap[i+1] == '0' && snap[i+2] == '0') {
-            //dostuff if colliding with black!
+            if(game.player.angle <= 0) {
+                game.player.direction = new Vector(-(game.player.circRad * Math.cos(game.player.angle)),
+                                                   -(game.player.circRad * Math.sin(game.player.angle))).multiply(-1);
+                }
+                
+            else 
+            if(game.player.angle > 0) {
+                game.player.direction = new Vector(game.player.circRad * Math.cos(game.player.angle),
+                                                   game.player.circRad * Math.sin(game.player.angle));
+                }
+            break;
+
+        case 40:
+            //do down arrow things here!
+            break;
         }
         
-        /*else
-        if(othercolors)
-        {
+    };
+    
+    this.update = function() {
+        ctx.fillStyle = "white";
         
-        }
+        ctx.fillRect(0, 0, 400, 400);
+                
+        game.player.draw();
         
-        etc.
-        */
-            
-    }
+        window.requestAnimationFrame(game.update);
+    };
+    
 }
