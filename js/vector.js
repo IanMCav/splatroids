@@ -14,7 +14,7 @@ function Vector(x, y) {
     
     //Returns direction (in rads)
     this.direction = function() {
-        return Math.atan((this.x / this.y));
+        return Math.atan2(this.y, this.x);
     };
     
     //Add a vector to this one

@@ -29,7 +29,7 @@ function Ship(newX, newY) {
         
         ctx.save();
         ctx.translate(this.position.x, this.position.y);
-        ctx.rotate(this.angle);
+        ctx.rotate(this.direction.direction());
         ctx.translate(0, -this.circRad);
         
         ctx.moveTo(0, 0);
