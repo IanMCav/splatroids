@@ -29,8 +29,7 @@ function Ship(newX, newY) {
         
         ctx.save();
         ctx.translate(this.position.x, this.position.y);
-        ctx.rotate(this.direction.direction());
-        console.log(this.direction.direction());
+        ctx.rotate(this.angle);
         ctx.translate(0, -this.circRad);
         
         ctx.moveTo(0, 0);

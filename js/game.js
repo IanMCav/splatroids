@@ -15,16 +15,8 @@ function Game() {
 
         case 37:
             game.player.angle -= 0.02 * Math.PI;
-                if(game.player.angle <= 0) {
-                game.player.direction = new Vector((game.player.circRad * Math.cos(game.player.angle)),
-                                                   (game.player.circRad * Math.sin(game.player.angle))).multiply(-1);
-                }
-                
-                else 
-                if(game.player.angle > 0) {
-                    game.player.direction = new Vector(game.player.circRad * Math.cos(game.player.angle),
+            game.player.direction = new Vector(game.player.circRad * Math.cos(game.player.angle),
                                                        game.player.circRad * Math.sin(game.player.angle));
-                }
                 
             break;
 
@@ -34,17 +26,8 @@ function Game() {
 
         case 39:
             game.player.angle += 0.02 * Math.PI;
-            
-            if(game.player.angle <= 0) {
-                game.player.direction = new Vector(-(game.player.circRad * Math.cos(game.player.angle)),
-                                                   -(game.player.circRad * Math.sin(game.player.angle))).multiply(-1);
-                }
-                
-            else 
-            if(game.player.angle > 0) {
-                game.player.direction = new Vector(game.player.circRad * Math.cos(game.player.angle),
+            game.player.direction = new Vector(game.player.circRad * Math.cos(game.player.angle),
                                                    game.player.circRad * Math.sin(game.player.angle));
-                }
             break;
 
         case 40:
